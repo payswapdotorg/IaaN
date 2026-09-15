@@ -1,0 +1,16 @@
+{
+  "name": "iaan",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "pnpm -r --if-present lint",
+    "test": "pnpm -r --if-present test",
+    "test:conformance": "pnpm -r --if-present test:conformance",
+    "test:e2e": "pnpm --filter @iaan/web test:e2e",
+    "boundary-check": "node scripts/check-boundaries.mjs",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm boundary-check"
+  }
+}
